@@ -57,9 +57,6 @@ pipeline {
         }
 
         stage('Deploy') {
-            when {
-                expression { env.BRANCH_NAME == 'main' }
-            }
             steps {
                 bat '''
                     taskkill /F /IM python.exe 2>nul || ver>nul
