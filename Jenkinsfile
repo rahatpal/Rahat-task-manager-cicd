@@ -58,7 +58,7 @@ pipeline {
 
         stage('Deploy') {
             when {
-                branch 'main'
+                expression { env.BRANCH_NAME == 'main' }
             }
             steps {
                 bat '''
