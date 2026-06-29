@@ -73,14 +73,14 @@ pipeline {
     post {
         success {
             emailext(
-                to: 'your-email@example.com',
+                to: 'rahat.pal@gmail.com',
                 subject: "SUCCESS: ${env.JOB_NAME} - ${env.BUILD_NUMBER}",
                 body: "Pipeline succeeded.\nJob: ${env.JOB_NAME}\nBuild: ${env.BUILD_NUMBER}\nURL: ${env.BUILD_URL}"
             )
         }
         failure {
             emailext(
-                to: 'your-email@example.com',
+                to: 'rahat.pal@gmail.com',
                 subject: "FAILED: ${env.JOB_NAME} - ${env.BUILD_NUMBER}",
                 body: "Pipeline failed.\nJob: ${env.JOB_NAME}\nBuild: ${env.BUILD_NUMBER}\nURL: ${env.BUILD_URL}"
             )
