@@ -107,8 +107,6 @@ On failure or success, an email notification is sent.
 
 ### Screenshot — Jenkins Pipeline
 
-*Insert screenshot of Jenkins pipeline showing all stages green (Checkout, Install Dependencies, Lint, Security Scan, Run Tests, Deploy)*
-
 ![Jenkins Pipeline Screenshot](screenshots/jenkins-pipeline.png)
 
 ### Step 5 — Configure the Jenkins Job
@@ -196,8 +194,6 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 
 ### Screenshot — GitHub Actions
 
-*Insert screenshot of GitHub Actions workflow runs showing green checkmarks on both main and staging branches*
-
 ![GitHub Actions Screenshot](screenshots/github-actions.png)
 
 ---
@@ -216,8 +212,6 @@ python app.py
 Visit **http://localhost:5000**
 
 ### Screenshot — Application
-
-*Insert screenshot of the Task Manager application running in the browser*
 
 ![App Screenshot](screenshots/app-running.png)
 
