@@ -60,7 +60,7 @@ pipeline {
             steps {
                 bat '''
                     taskkill /F /IM python.exe 2>nul || ver>nul
-                    start /B python app.py
+                    start /B venv\\Scripts\\python.exe app.py
                     echo Deployed on port 5000
                 '''
             }
