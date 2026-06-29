@@ -14,10 +14,10 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh '''
-                    python3 -m venv venv
-                    . venv/bin/activate
-                    pip install --upgrade pip
+                bat '''
+                    python -m venv venv
+                    call venv\\Scripts\\activate.bat
+                    python -m pip install --upgrade pip
                     pip install -r requirements.txt
                 '''
             }
@@ -25,8 +25,8 @@ pipeline {
 
         stage('Lint') {
             steps {
-                sh '''
-                    . venv/bin/activate
+                bat '''
+                    call venv\\Scripts\\activate.bat
                     pylint app.py --exit-zero
                 '''
             }
@@ -34,17 +34,17 @@ pipeline {
 
         stage('Security Scan') {
             steps {
-                sh '''
-                    . venv/bin/activate
-                    bandit -r app.py -l || echo "Bandit check skipped"
+                bat '''
+                    call venv\\Scripts\\activate.bat
+                    bandit -r app.py -l || echo Bandit check skipped
                 '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh '''
-                    . venv/bin/activate
+                bat '''
+                    call venv\\Scripts\\activate.bat
                     python -m pytest test_app.py -v --junitxml=report.xml
                 '''
             }
@@ -60,11 +60,10 @@ pipeline {
                 branch 'main'
             }
             steps {
-                sh '''
-                    . venv/bin/activate
-                    pkill -f "python3 app.py" || true
-                    nohup python3 app.py --host=0.0.0.0 --port=5000 > flask.log 2>&1 &
-                    echo "Deployed on port 5000"
+                bat '''
+                    taskkill /F /IM python.exe 2>nul || ver>nul
+                    start /B python app.py
+                    echo Deployed on port 5000
                 '''
             }
         }
