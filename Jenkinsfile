@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         PYTHONPATH = "${WORKSPACE}"
+        PATH = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python314;C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python314\\Scripts;${env.PATH}"
     }
 
     stages {
