@@ -236,26 +236,3 @@ test_app.py::test_multiple_tasks PASSED
 
 ---
 
-## Submission Checklist
-
-- [ ] GitHub repository created with all files pushed
-- [ ] `Jenkinsfile` in root
-- [ ] `.github/workflows/ci-cd.yml` in place
-- [ ] `README.md` updated
-- [ ] Jenkins installed and Pipeline job configured
-- [ ] GitHub webhook pointing to Jenkins
-- [ ] Email notifications configured in Jenkins
-- [ ] `staging` branch created and pushed
-- [ ] Screenshots taken:
-  - Jenkins pipeline showing all stages (Install Dependencies, Lint, Security Scan, Run Tests, Deploy)
-  - GitHub Actions workflow showing successful run
-- [ ] Repo URL and screenshots submitted via Vlearn
-
----
-
-## Deliverables
-
-1. **GitHub repository** with `Jenkinsfile`, workflow file, and application code
-2. **Documentation** in `README.md`
-3. **Screenshots** of Jenkins pipeline execution
-4. **Screenshots** of GitHub Actions workflow runs
