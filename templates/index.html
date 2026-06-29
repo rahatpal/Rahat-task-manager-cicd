@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Your Tasks</h2>
+    {% if tasks %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task[1] }}</td>
+                    <td>{{ task[2] or "" }}</td>
+                    <td>
+                        {% if task[3] == "done" %}
+                            <span class="badge bg-success">Done</span>
+                        {% else %}
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="/toggle/{{ task[0] }}" class="btn btn-sm btn-outline-secondary">Toggle</a>
+                        <a href="/delete/{{ task[0] }}" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-info">No tasks yet. <a href="/add">Add one!</a></div>
+    {% endif %}
+{% endblock %}
